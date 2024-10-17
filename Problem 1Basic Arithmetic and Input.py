@@ -9,54 +9,90 @@
 # calculate and print the sum, difference, product, and quotient (division result) of the two
 # numbers.
 
-def add(x, y):
-    return x + y
+# Define the addition function with 2 numbers by returning
+# the sum of these 2 numbers
+def addition(num1, num2):
+    return num1 + num2
 
+# Define the subtraction function with 2 numbers by returning
+# the difference of these 2 numbers
+def subtraction(num1, num2):
+    return num1 - num2
 
-def subtract(x, y):
-    return x - y
+# Define the multiplication function with 2 numbers by returning
+# the product of these 2 numbers
+def multiplication(num1, num2):
+    return num1 * num2
 
-
-def multiply(x, y):
-    return x * y
-
-
-def divide(x, y):
-    if y != 0:
-        return x / y
+# Define the division function with 2 numbers by returning
+# the quotient of these 2 numbers, except if the second number
+# is equal to 0 because a division by 0 is impossible. It would
+# return an error message
+def division(num1, num2):
+    if num2 != 0:
+        return num1 / num2
     else:
-        return "Error! Division by zero!."
+        return "Error, division by zero impossible"
 
+# Define the calculator function
+def calculator():
 
-def main():
+# Start a while loop, to allow the calculator to reset itself until
+# the user decides to exit, or uses an invalid choice
     while True:
-        print("1. Add")
-        print("2. Subtract")
-        print("3. Multiply")
-        print("4. Division")
+
+# Prints the choices to the user
+        print("Select an operation:")
+        print("1. Addition (+)")
+        print("2. Subtraction (-)")
+        print("3. Multiplication (*)")
+        print("4. Division (/)")
         print("5. Exit")
 
-        choice = input("Enter choice: ")
+ # Define the variable choice as being the user's input choice
+        choice = input("Enter your choice 1, 2, 3, 4 or 5:")
 
-        if choice == '5':
-            print("exiting, thank you!")
+# If the user wants to exit the calculator, print a "Goodbye" message
+# and exit the calculator through the break statement
+        if choice == "5":
+            print("Goodbye!")
             break
 
-        num1 = float(input("Enter your first number: "))
-        num2 = float(input("Enter your second number: "))
+# If the user's choice is not between 1 and 5, print an "Invalid choice"
+# message and asks the user to restart the calculator and enter a
+# valid choice. The break statement stops the while loop
+        if choice not in ["1", "2", "3", "4", "5"]:
+            print("Invalid choice! Please restart the calculator"
+                  " and enter a valid choice")
+            break
 
-        if choice == '1':
-            print(f"{num1} + {num2} = {add(num1, num2)}")
-        elif choice == '2':
-            print(f"{num1} - {num2} = {subtract(num1, num2)}")
-        elif choice == '3':
-            print(f"{num1} * {num2} = {multiply(num1, num2)}")
-        elif choice == '4':
-            print(f"{num1} / {num2} = {divide(num1, num2)}")
-        else:
-            print("Invalid input")
+# Ask the user to enter the first number, converts the input from a
+# string to a float number, and assigns it to the variable num1
+        num1 = float(input("Enter your first number:"))
 
+# Ask the user to enter the second number, converts the input from a
+# string to a float number, and assigns it to the variable num2
+        num2 = float(input("Enter your second number:"))
 
+# Perform the chosen operation based on user's choice
+
+# Call the addition function and print the sum of num1 and num2
+        if choice == "1":
+            print(f"The result is: {addition(num1, num2)}")
+
+## Call the subtraction function and print the difference of num1 and num2
+        if choice == "2":
+            print(f"The result is: {subtraction(num1, num2)}")
+
+# Call the multiplication function and print the product of num1 and num2
+        if choice == "3":
+            print(f"The result is: {multiplication(num1, num2)}")
+
+# Call the division function and print the quotient of num1 and num2
+        if choice == "4":
+            print(f"The result is: {division(num1, num2)}")
+
+# This construct ensures that certain code is only executed when the script is run
+# directly, and not when it is imported as a module in another script.
 if __name__ == "__main__":
-    main()
-
+    calculator()
