@@ -3,7 +3,7 @@
 # Instructor: MD Ali
 # Lab 6
 
-# Problem 6
+# Problem 6: Prime Number Checker
 # Objective: Practice using loops, conditionals, and functions.
 # Write a Python function called is_prime that takes an integer as input and returns True if the
 # number is prime and False otherwise. A prime number is a number greater than 1 that has no
