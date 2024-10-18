@@ -3,6 +3,7 @@
 # Instructor: MD Ali
 # Lab 6
 
+# Problem 4: String Reversal
 # Objective: Practice string manipulation and loops.
 # Write a Python function called reverse_string that takes a string as input and returns the string
 # reversed. For example, if the input is "hello", the function should return "olleh".
